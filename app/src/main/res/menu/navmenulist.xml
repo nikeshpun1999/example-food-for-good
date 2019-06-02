@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/db" android:title="Dashboard" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/st1" android:title="Profile" android:icon="@drawable/ic_id_card"/>
+    <item android:id="@+id/st2" android:title="Logout" android:icon="@drawable/ic_logout"/>
+
+</menu>
