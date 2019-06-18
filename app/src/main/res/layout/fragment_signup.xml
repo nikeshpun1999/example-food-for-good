@@ -39,53 +39,88 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_username"
-        android:hint="Enter Username"
+        android:id="@+id/signup_firstname"
+        android:hint="Enter Your firstname"
         android:layout_below="@+id/tv_title"
         android:layout_margin="10sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_email"
-        android:hint="Enter Email"
-        android:layout_below="@+id/et_username"
+        android:id="@+id/signup_middlename"
+        android:hint="Enter Your middlename"
+        android:layout_below="@+id/signup_firstname"
         android:layout_margin="10sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_password"
-        android:hint="Enter password"
-        android:layout_below="@+id/et_email"
+        android:id="@+id/signup_lastname"
+        android:hint="Enter Your last name"
+        android:layout_below="@+id/signup_middlename"
         android:layout_margin="10sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_repassword"
-        android:hint="Confirm password"
-        android:layout_below="@+id/et_password"
+        android:id="@+id/signup_Username"
+        android:hint="Enter your lastname"
+        android:layout_below="@+id/signup_lastname"
         android:layout_margin="10sp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_nationality"
-        android:hint="Nationality"
-        android:layout_below="@+id/et_repassword"
+        android:id="@+id/signup_userdesc"
+        android:hint="Your short description"
+        android:layout_below="@+id/signup_Username"
         android:layout_margin="10sp"/>
 
-    <CheckBox
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I have read the agreement and wish to proceed."
-        android:id="@+id/chb_rem"
-        android:layout_below="@+id/et_nationality"
-        android:layout_margin="10sp"
-        />
+        android:id="@+id/signup_btn_Profilepic"
+        android:hint="Pick a prof picture"
+        android:layout_below="@+id/signup_userdesc"
+        android:layout_margin="10sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_age"
+        android:hint="Your age"
+        android:inputType="number"
+        android:layout_below="@+id/signup_btn_Profilepic"
+        android:layout_margin="10sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_sex"
+        android:hint="Your gender"
+        android:layout_below="@+id/signup_age"
+        android:layout_margin="10sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_nationality"
+        android:hint="Your Nationality"
+        android:layout_below="@+id/signup_sex"
+        android:layout_margin="10sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_Password"
+        android:hint="Set a password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/signup_nationality"
+        android:layout_margin="10sp"/>
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up "
-        android:id="@+id/btn_signup"
-        android:layout_below="@id/chb_rem"
+        android:id="@+id/signup_btn_signup"
+        android:layout_below="@id/signup_Password"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
