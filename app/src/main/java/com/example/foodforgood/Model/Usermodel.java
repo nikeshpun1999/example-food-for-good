@@ -1,100 +1,101 @@
 package com.example.foodforgood.Model;
 
 public class Usermodel {
-private String Fname,Mname,Lname,Username,Password,UserDesc,ProfilePic,Sex,Nationality;
-private Number Age;
+    private String firstname,middlename,lastname,uname,password,userdescription,profilepic,sex,nationality;
+    private Number age;
 
-    public Usermodel(String fname, String mname, String lname, String username, String password, String userDesc, String profilePic, String sex, String nationality, Number age) {
-
-        Fname = fname;
-        Mname = mname;
-        Lname = lname;
-        Username = username;
-        Password = password;
-        UserDesc = userDesc;
-        ProfilePic = profilePic;
-        Sex = sex;
-        Nationality = nationality;
-        Age = age;
+    public Usermodel(String firstname, String middlename, String lastname, String uname, String password, String userdescription, String profilepic, String sex, String nationality, Number age) {
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.uname = uname;
+        this.password = password;
+        this.userdescription = userdescription;
+        this.profilepic = profilepic;
+        this.sex = sex;
+        this.nationality = nationality;
+        this.age = age;
     }
 
-    public String getFname() {
-        return Fname;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFname(String fname) {
-        Fname = fname;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getMname() {
-        return Mname;
+    public String getMiddlename() {
+        return middlename;
     }
 
-    public void setMname(String mname) {
-        Mname = mname;
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
     }
 
-    public String getLname() {
-        return Lname;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLname(String lname) {
-        Lname = lname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getUsername() {
-        return Username;
+    public String getUname() {
+        return uname;
     }
 
-    public void setUsername(String username) {
-        Username = username;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
-    public String getUserDesc() {
-        return UserDesc;
+    public String getUserdescription() {
+        return userdescription;
     }
 
-    public void setUserDesc(String userDesc) {
-        UserDesc = userDesc;
+    public void setUserdescription(String userdescription) {
+        this.userdescription = userdescription;
     }
 
-    public String getProfilePic() {
-        return ProfilePic;
+    public String getProfilepic() {
+        return profilepic;
     }
 
-    public void setProfilePic(String profilePic) {
-        ProfilePic = profilePic;
+    public void setProfilepic(String profilepic) {
+        this.profilepic = profilepic;
     }
 
     public String getSex() {
-        return Sex;
+        return sex;
     }
 
     public void setSex(String sex) {
-        Sex = sex;
+        this.sex = sex;
     }
 
     public String getNationality() {
-        return Nationality;
+        return nationality;
     }
 
     public void setNationality(String nationality) {
-        Nationality = nationality;
+        this.nationality = nationality;
     }
 
     public Number getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(Number age) {
-        Age = age;
+        this.age = age;
     }
 }
+
+

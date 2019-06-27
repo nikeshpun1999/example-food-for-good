@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SignupFragment">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -61,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signup_Username"
-        android:hint="Enter your lastname"
+        android:hint="Enter your username"
         android:layout_below="@+id/signup_lastname"
         android:layout_margin="10sp"/>
     <EditText
@@ -72,13 +75,13 @@
         android:layout_below="@+id/signup_Username"
         android:layout_margin="10sp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/signup_btn_Profilepic"
-        android:hint="Pick a prof picture"
-        android:layout_below="@+id/signup_userdesc"
-        android:layout_margin="10sp"/>
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/signup_btn_Profilepic"-->
+        <!--android:hint="Pick a prof picture"-->
+        <!--android:layout_below="@+id/signup_userdesc"-->
+        <!--android:layout_margin="10sp"/>-->
 
     <EditText
         android:layout_width="match_parent"
@@ -86,7 +89,7 @@
         android:id="@+id/signup_age"
         android:hint="Your age"
         android:inputType="number"
-        android:layout_below="@+id/signup_btn_Profilepic"
+        android:layout_below="@+id/signup_userdesc"
         android:layout_margin="10sp"/>
 
     <EditText
@@ -125,6 +128,8 @@
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
 
 </FrameLayout>
