@@ -17,7 +17,7 @@ public interface UserAPI {
     Call<String> registeruser(@Body Usermodel usermodel);
 
     @FormUrlEncoded
-    @POST("login")
+    @POST("users/login")
     Call<Tokenauth> logincheck(@Field("username") String uname, @Field("password") String pass);
 
 }

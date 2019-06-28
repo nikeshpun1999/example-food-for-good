@@ -103,7 +103,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void onResponse(Call<Tokenauth> call, Response<Tokenauth> response) {
                     if(!response.isSuccessful()){
-                        Toast.makeText(getActivity(), "man", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), "man", Toast.LENGTH_SHORT).show();
                         Toast.makeText(getActivity(),response.code(), Toast.LENGTH_SHORT).show();
                         return;
                     }
