@@ -17,12 +17,14 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".test"></activity>
         <activity android:name=".Views.Switch" ><intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.MAIN"
+            />
 
         <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
         <activity android:name=".Views.Dashboard" />
         <activity android:name=".Views.MainActivity">
+            <!--android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">-->
 
         </activity>
     </application>
