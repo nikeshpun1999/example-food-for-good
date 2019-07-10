@@ -34,21 +34,7 @@ public interface UserAPI {
     Call<String> uploadImage(@Part MultipartBody.Part body);
 
 
-    @FormUrlEncoded
-    @PUT("users/updateprofile")
-    Call<String> updateprofile(
-            @Field("_id") String id,
-            @Field("Fname") String fname,
-            @Field("Mname") String mname,
-            @Field("Lname") String lname,
-            @Field("Username") String uname,
-            @Field("UserDesc") String udesc,
-            @Field("Age") String age,
-            @Field("Sex") String sex,
-            @Field("Nationality") String nationality,
-            @Field("Password") String pass,
-//            @Field("token") String token,
-            @Field("Profilepic") String profilepic
-    );
+    @POST("users/updateprofile/Android/{id}")
+    Call<Void> updateprofile(@Body Usermodel usermodel,@Path("id") String id);
 
 }

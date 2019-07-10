@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SignupFragment">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/dashboard"
+                android:layout_margin="15sp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_logo"
+                    android:layout_weight="2"
+                    />
+               <android.support.v7.widget.AppCompatImageView
+                   android:layout_width="150dp"
+                   android:layout_height="80dp" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Craft a Recipe!!!"
+                android:id="@+id/tv_title"
+                android:layout_below="@+id/dashboard"
+                android:layout_margin="20sp"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/imageselection"
+                android:layout_below="@+id/tv_title"
+                android:layout_margin="15sp">
+
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/craft_recipeimageview"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_recipegallary"
+                    android:layout_weight="2"
+                    android:text="Open Gallery"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_opencamera"
+                    android:layout_weight="2"
+                    android:text="Open Camera"
+                    />
+
+            </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_recipeImagename"
+                android:hint="Blank.jpg"
+                android:layout_below="@+id/imageselection"
+                android:editable="false"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_Userid"
+                android:hint="Blank"
+                android:layout_below="@+id/craft_recipeImagename"
+                android:editable="false"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_recipename"
+                android:hint="Enter Your recipeName"
+                android:layout_below="@+id/craft_Userid"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_origin"
+                android:hint="Enter Your middlename"
+                android:layout_below="@+id/craft_recipename"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw1"
+                android:hint="Enter Raw material 1"
+                android:layout_below="@+id/craft_origin"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw2"
+                android:hint="Enter Raw material 2"
+                android:layout_below="@+id/craft_raw1"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw3"
+                android:hint="Enter Raw material 3"
+                android:layout_below="@+id/craft_raw2"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw4"
+                android:hint="Enter Raw material 4"
+                android:layout_below="@+id/craft_raw3"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw5"
+                android:hint="Enter Raw material 5"
+                android:layout_below="@+id/craft_raw4"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw6"
+                android:hint="Enter Raw material 6"
+                android:layout_below="@+id/craft_raw5"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw7"
+                android:hint="Enter Raw material 7"
+                android:layout_below="@+id/craft_raw6"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw8"
+                android:hint="Enter Raw material 8"
+                android:layout_below="@+id/craft_raw7"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_raw9"
+                android:hint="Enter Raw material 9"
+                android:layout_below="@+id/craft_raw8"
+                android:layout_margin="10sp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_direction"
+                android:hint="Tips to make recipe"
+                android:inputType="number"
+                android:layout_below="@+id/craft_raw9"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_duration"
+                android:hint="Recipe duration"
+                android:layout_below="@+id/craft_direction"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_servingcount"
+                android:hint="Number of serving"
+                android:layout_below="@+id/craft_duration"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/craft_difficulty"
+                android:hint="Difficulty level"
+                android:inputType="textPassword"
+                android:layout_below="@+id/craft_servingcount"
+                android:layout_margin="10sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Craft your recipe"
+                android:id="@+id/btn_craftrecipe"
+                android:layout_below="@id/craft_difficulty"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</FrameLayout>

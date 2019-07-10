@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.foodforgood">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -15,16 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".test"></activity>
-        <activity android:name=".Views.Switch" ><intent-filter>
-        <action android:name="android.intent.action.MAIN"
-            />
+        <activity android:name=".Views.Craftrecipe"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Views.Originrecipe" />
+        <activity android:name=".Views.Addrecipe" />
+        <activity android:name=".Views.Onrecipeclick" />
+        <activity android:name=".Views.Latestdish" />
+        <activity android:name=".Views.Profile" />
+        <activity android:name=".test" />
+        <activity android:name=".Views.Switch"></activity>
         <activity android:name=".Views.Dashboard" />
         <activity android:name=".Views.MainActivity">
-            <!--android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">-->
+
+            <!-- android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"> -->
 
         </activity>
     </application>

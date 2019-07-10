@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.foodforgood.API.UserAPI;
+import com.example.foodforgood.BussinessLogic.RegisterBL;
 import com.example.foodforgood.Model.Usermodel;
 import com.example.foodforgood.R;
     import com.example.foodforgood.retrofit.RetrofitBase;
@@ -23,7 +24,7 @@ import retrofit2.Retrofit;
 
 public class SignupFragment extends Fragment implements View.OnClickListener{
 EditText fname,mname,lname,udesc,tage,tsex,username,tnationality,tpassword;
-    Button profpick,btnsignup;
+    Button btnsignup;
     UserAPI uapi;
 
     public SignupFragment() {
@@ -67,7 +68,7 @@ EditText fname,mname,lname,udesc,tage,tsex,username,tnationality,tpassword;
         String middlename=mname.getText().toString();
         String lastname=lname.getText().toString();
         String userdescription=udesc.getText().toString();
-        Number age=Integer.parseInt(tage.getText().toString());
+        Double age=Double.parseDouble(tage.getText().toString());
         String sex=tsex.getText().toString();
         String uname=username.getText().toString();
         String nationality=tnationality.getText().toString();
@@ -76,9 +77,18 @@ EditText fname,mname,lname,udesc,tage,tsex,username,tnationality,tpassword;
 //        String Profilepic=profpick.getText().toString();
 
 
-        Usermodel usermodel=new Usermodel(firstname,middlename,lastname,uname,password,userdescription,profilepic,sex,nationality,age);
-        UserAPI userAPI= RetrofitBase.instance().create(UserAPI.class);
-        Call<String> usercall=userAPI.registeruser(usermodel);
+        //Usermodel usermodel=new Usermodel();
+        final RegisterBL registerBL=new RegisterBL(firstname,middlename,lastname,uname,password,userdescription,profilepic,"",sex,nationality);
+        StrictMode();
+        if (registerBL.registerUser()){
+            Toast.makeText(getActivity(), "Registered", Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+        }
+        //UserAPI userAPI= RetrofitBase.instance().create(UserAPI.class);
+        /*Call<String> usercall=userAPI.registeruser(usermodel);
         ((Call) usercall).enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
@@ -95,6 +105,11 @@ EditText fname,mname,lname,udesc,tage,tsex,username,tnationality,tpassword;
             public void onFailure(Call call, Throwable t) {
                 Toast.makeText(getActivity(), "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
+    public void StrictMode(){
+        android.os.StrictMode.ThreadPolicy policy=new android.os.StrictMode.ThreadPolicy.Builder().permitAll().build();
+        android.os.StrictMode.setThreadPolicy(policy);
+    }
+
 }

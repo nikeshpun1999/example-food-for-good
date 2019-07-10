@@ -19,26 +19,26 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
+public class OriginrecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
     List<RecipeModel> recipeModelList;
     Context context;
 
     public static final String BASE_URL="http://10.0.2.2:4500/";
 
-    public RecipeAdapter(List<RecipeModel> recipeModelList, Context context) {
+    public OriginrecipeAdapter(List<RecipeModel> recipeModelList, Context context) {
         this.recipeModelList = recipeModelList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public RecipeAdapter.RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.sample_recycler_view,viewGroup,false);
-        return new RecipeViewHolder(itemView);
+        return new RecipeAdapter.RecipeViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, int i) {
+    public void onBindViewHolder(@NonNull RecipeAdapter.RecipeViewHolder recipeViewHolder, int i) {
         final RecipeModel recipeModel=recipeModelList.get(i);
         recipeViewHolder.tv_heading.setText(recipeModel.getRecipeName());
 
@@ -69,6 +69,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             }
         });
 
+
     }
 
     @Override
@@ -76,7 +77,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         return recipeModelList.size();
     }
 
-    public static class RecipeViewHolder extends RecyclerView.ViewHolder{
+    public class RecipeViewHolder extends RecyclerView.ViewHolder{
         public TextView tv_heading;
         public ImageView img;
 
@@ -86,7 +87,4 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             img=itemView.findViewById(R.id.sample_image);
         }
     }
-
-
-
 }

@@ -1,101 +1,100 @@
 package com.example.foodforgood.Model;
 
 public class Usermodel {
-    private String firstname,middlename,lastname,uname,password,userdescription,profilepic,sex,nationality;
-    private Number age;
+    private String _id, Fname, Mname, Lname, Username, Password, UserDesc, ProfilePic, Sex, Nationality;
 
-    public Usermodel(String firstname, String middlename, String lastname, String uname, String password, String userdescription, String profilepic, String sex, String nationality, Number age) {
-        this.firstname = firstname;
-        this.middlename = middlename;
-        this.lastname = lastname;
-        this.uname = uname;
-        this.password = password;
-        this.userdescription = userdescription;
-        this.profilepic = profilepic;
-        this.sex = sex;
-        this.nationality = nationality;
-        this.age = age;
+
+    public Usermodel(String fname, String mname, String lname, String username, String password, String userDesc, String profilePic, String sex, String nationality) {
+        Fname = fname;
+        Mname = mname;
+        Lname = lname;
+        Username = username;
+        Password = password;
+        UserDesc = userDesc;
+        ProfilePic = profilePic;
+        Sex = sex;
+        Nationality = nationality;
+
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String get_id() {
+        return _id;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
-    public String getMiddlename() {
-        return middlename;
+    public String getFname() {
+        return Fname;
     }
 
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
+    public void setFname(String fname) {
+        Fname = fname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getMname() {
+        return Mname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setMname(String mname) {
+        Mname = mname;
     }
 
-    public String getUname() {
-        return uname;
+    public String getLname() {
+        return Lname;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setLname(String lname) {
+        Lname = lname;
+    }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        Password = password;
     }
 
-    public String getUserdescription() {
-        return userdescription;
+    public String getUserDesc() {
+        return UserDesc;
     }
 
-    public void setUserdescription(String userdescription) {
-        this.userdescription = userdescription;
+    public void setUserDesc(String userDesc) {
+        UserDesc = userDesc;
     }
 
-    public String getProfilepic() {
-        return profilepic;
+    public String getProfilePic() {
+        return ProfilePic;
     }
 
-    public void setProfilepic(String profilepic) {
-        this.profilepic = profilepic;
+    public void setProfilePic(String profilePic) {
+        ProfilePic = profilePic;
     }
 
     public String getSex() {
-        return sex;
+        return Sex;
     }
 
     public void setSex(String sex) {
-        this.sex = sex;
+        Sex = sex;
     }
 
     public String getNationality() {
-        return nationality;
+        return Nationality;
     }
 
     public void setNationality(String nationality) {
-        this.nationality = nationality;
+        Nationality = nationality;
     }
 
-    public Number getAge() {
-        return age;
-    }
-
-    public void setAge(Number age) {
-        this.age = age;
-    }
 }
-
-

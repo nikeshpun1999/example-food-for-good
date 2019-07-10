@@ -1,10 +1,13 @@
 package com.example.foodforgood.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +17,11 @@ import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.example.foodforgood.API.UserAPI;
+import com.example.foodforgood.BussinessLogic.LoginBL;
 import com.example.foodforgood.Model.Tokenauth;
 import com.example.foodforgood.R;
 import com.example.foodforgood.Sharedpreference;
+import com.example.foodforgood.Views.Dashboard;
 import com.example.foodforgood.Views.MainActivity;
 import com.example.foodforgood.retrofit.RetrofitBase;
 
@@ -29,6 +34,9 @@ import retrofit2.Response;
 public class LoginFragment extends Fragment implements View.OnClickListener {
     Button signup, login;
     EditText username, password;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+    Boolean isLoggedin=false;
 
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
@@ -57,6 +65,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         signup.setOnClickListener(this);
         login.setOnClickListener(this);
+        preferences= getActivity().getSharedPreferences("UserData" , 0);
+        editor= preferences.edit();
         return view;
     }
 
@@ -69,7 +79,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btn_signin:
-                Toast.makeText(getActivity(), "entereed", Toast.LENGTH_SHORT).show();
                 Login();
                 break;
         }
@@ -89,14 +98,47 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
         return true;
     }
-
+    public void StrictMode(){
+        android.os.StrictMode.ThreadPolicy policy=new android.os.StrictMode.ThreadPolicy.Builder().permitAll().build();
+        android.os.StrictMode.setThreadPolicy(policy);
+    }
     private void Login(){
-        if (Validationlogin()){
-//            Toast.makeText(getActivity(), "this", Toast.LENGTH_SHORT).show();
-            String uname=username.getText().toString().trim();
-            String pass=password.getText().toString().trim();
 
-            UserAPI userAPI= RetrofitBase.instance().create(UserAPI.class);
+        if (Validationlogin()) {
+//            Toast.makeText(getActivity(), "this", Toast.LENGTH_SHORT).show();
+            String uname = username.getText().toString().trim();
+            String pass = password.getText().toString().trim();
+
+            final LoginBL loginBL = new LoginBL(uname, pass);
+            StrictMode();
+
+            if (loginBL.checkUser()) {
+                Toast.makeText(getActivity(), "Welcome "+LoginBL.uname, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                editor.putString("Fname", LoginBL.fname).commit();
+                editor.putString("Lname",LoginBL.lname).commit();
+                editor.putString("Mname",LoginBL.mname).commit();
+                editor.putString("Username",LoginBL.uname).commit();
+                editor.putString("Password",LoginBL.pass).commit();
+                editor.putString("Userdesc",LoginBL.userdesc).commit();
+                editor.putString("ProfilePic",LoginBL.profilepic).commit();
+                editor.putString("Age",LoginBL.age).commit();
+                editor.putString("Sex",LoginBL.sex).commit();
+                editor.putString("token",LoginBL.token).commit();
+                editor.putString("Nationality",LoginBL.nationality).commit();
+                editor.putString("id",LoginBL.id).commit();
+                isLoggedin=true;
+                editor.putBoolean("isLoggedin",isLoggedin).commit();
+                startActivity(intent);
+                getActivity().finish();
+            }
+            else{
+                Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_SHORT).show();
+            }
+
+            /*UserAPI userAPI= RetrofitBase.instance().create(UserAPI.class);
             Call<Tokenauth> calllogin=userAPI.logincheck(uname,pass);
 
             calllogin.enqueue(new Callback<Tokenauth>() {
@@ -108,8 +150,21 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         return;
                     }
                     Tokenauth res=response.body();
-                    new Sharedpreference(getActivity()).SessionStart(res.getMessage(),res.getToken());
+//                    new Sharedpreference(getActivity()).SessionStart(res.getMessage,res.getToken());
                   Toast.makeText(getActivity(), "man", Toast.LENGTH_SHORT).show();
+
+                    editor.putString("token",res.getToken());
+                    editor.putString("userid",res.getId());
+                    editor.putString("usernationality",res.getNationality());
+                    editor.commit();
+//                    Log.d("userid",res.getUser().getUserid());
+//                    editor.putString("firstname",res.getUser().getFirstname());
+//                    editor.putString("middlename",res.getUser().getMiddlename());
+//                    editor.putString("lastname",res.getUser().getLastname());
+//                    editor.putString("username",res.getUser().getUname());
+//                    editor.putString("password",res.getUser().getPassword());
+//                    editor.putString("userdesc",res.getUser().getUserdescription());
+
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
                     getActivity().finish();
@@ -121,6 +176,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 }
             });
         }
+    }*/
+        }
     }
-
 }

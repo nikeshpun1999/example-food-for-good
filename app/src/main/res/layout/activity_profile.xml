@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    layout_height=""
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Profile"
+                android:id="@+id/tv_title"
+                android:layout_margin="20sp"
+                android:gravity="center"
+                android:textSize="40dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/dashboard"
+                android:layout_margin="15sp"
+                android:layout_below="@+id/tv_title"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/profile_profileimg"/>
+                <Button
+                    android:text="Update Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_btn_updateimg"
+                    android:layout_weight="4"
+
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_picname"
+                android:hint="Your profileimage name"
+                android:layout_below="@+id/dashboard"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_firstname"
+                android:hint="Enter Your firstname"
+                android:layout_below="@+id/profile_picname"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_middlename"
+                android:hint="Enter Your middlename"
+                android:layout_below="@+id/profile_firstname"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_lastname"
+                android:hint="Enter Your last name"
+                android:layout_below="@+id/profile_middlename"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_Username"
+                android:hint="Enter your username"
+                android:layout_below="@+id/profile_lastname"
+                android:layout_margin="10sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_userdesc"
+                android:hint="Your short description"
+                android:layout_below="@+id/profile_Username"
+                android:layout_margin="10sp"/>
+
+            <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/signup_btn_Profilepic"-->
+            <!--android:hint="Pick a prof picture"-->
+            <!--android:layout_below="@+id/signup_userdesc"-->
+            <!--android:layout_margin="10sp"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/profile_age"-->
+                <!--android:hint="Your age"-->
+                <!--android:inputType="number"-->
+                <!--android:layout_below="@+id/profile_userdesc"-->
+                <!--android:layout_margin="10sp"/>-->
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_sex"
+                android:hint="Your gender"
+                android:layout_below="@+id/profile_userdesc"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_nationality"
+                android:hint="Your Nationality"
+                android:layout_below="@+id/profile_sex"
+                android:layout_margin="10sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_Password"
+                android:hint="Set a password"
+                android:inputType="textPassword"
+                android:layout_below="@+id/profile_nationality"
+                android:layout_margin="10sp"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Profile"
+                android:id="@+id/profile_btn_updateprofile"
+                android:layout_below="@id/profile_Password"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
